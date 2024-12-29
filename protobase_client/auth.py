@@ -4,9 +4,10 @@ import requests
 
 BASE_URL = "https://protobase.pythonanywhere.com/"
 
+
 class ProtoBaseClient:
-    def __init__(self, base_url=BASE_URL):
-        self.base_url = base_url
+    def __init__(self):
+        self.base_url = BASE_URL
 
     def signup_email(self, username, password, email):
         """Sign up with email."""
@@ -58,4 +59,4 @@ class ProtoBaseClient:
         elif response.status_code == 400:
             return response.json()
         else:
-            return {"message": "Error signing in."}
+            return {"message": "Error signing in."}, response.status_code
