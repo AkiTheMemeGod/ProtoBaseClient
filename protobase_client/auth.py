@@ -9,10 +9,10 @@ class ProtoBaseClient:
     def __init__(self):
         self.base_url = BASE_URL
 
-    def signup_email(self, username, password, email):
+    def signup_email(self, username, password, email, token):
         """Sign up with email."""
         url = f"{self.base_url}auth_api/email-signup/"
-        params = {"usr": username, "pwd": password, "email": email}
+        params = {"usr": username, "pwd": password, "email": email, 'token': token}
         response = requests.get(url, params=params)
 
         if response.status_code == 200:
@@ -22,10 +22,10 @@ class ProtoBaseClient:
         else:
             return {"message": "Error signing up."}
 
-    def signup_username(self, username, password):
+    def signup_username(self, username, password, token):
         """Sign up with username."""
         url = f"{self.base_url}auth_api/user-signup/"
-        params = {"usr": username, "pwd": password}
+        params = {"usr": username, "pwd": password, 'token': token}
         response = requests.get(url, params=params)
 
         if response.status_code == 200:
@@ -35,10 +35,10 @@ class ProtoBaseClient:
         else:
             return {"message": "Error signing up."}
 
-    def signin_email(self, username, password, email):
+    def signin_email(self, username, password, email, token):
         """Sign in with email."""
         url = f"{self.base_url}auth_api/email-signin/"
-        params = {"usr": username, "pwd": password, "email": email}
+        params = {"usr": username, "pwd": password, "email": email, 'token': token}
         response = requests.get(url, params=params)
 
         if response.status_code == 200:
@@ -48,10 +48,10 @@ class ProtoBaseClient:
         else:
             return {"message": "Error signing in."}
 
-    def signin_username(self, username, password):
+    def signin_username(self, username, password, token):
         """Sign in with username."""
         url = f"{self.base_url}auth_api/user-signin/"
-        params = {"usr": username, "pwd": password}
+        params = {"usr": username, "pwd": password, 'token': token}
         response = requests.get(url, params=params)
 
         if response.status_code == 200:

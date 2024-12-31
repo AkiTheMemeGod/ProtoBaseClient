@@ -12,6 +12,9 @@
 - **Seamless API interaction**: The package handles all the HTTP request/response management, making authentication tasks straightforward.
 
 ---
+## Api Token
+
+Get Your Api-Token from the [Official Website](https://protobase.pythonanywhere.com/)
 
 ## Installation
 
@@ -44,7 +47,7 @@ client = ProtoBaseClient()
 To sign up a user with their email and password:
 
 ```python
-signup_response = client.signup_email("username", "password", "email@example.com")
+signup_response = client.signup_email("username", "password", "email@example.com", "api_token")
 print(signup_response)
 ```
 
@@ -53,7 +56,7 @@ print(signup_response)
 To sign in a user with their email and password:
 
 ```python
-signin_response = client.signin_email("username", "password", "email@example.com")
+signin_response = client.signin_email("username", "password", "email@example.com", "api_token")
 print(signin_response)
 ```
 
@@ -62,7 +65,7 @@ print(signin_response)
 To sign up a user with just a username and password:
 
 ```python
-signup_response = client.signup_username("username", "password")
+signup_response = client.signup_username("username", "password", "api_token")
 print(signup_response)
 ```
 
@@ -71,7 +74,7 @@ print(signup_response)
 To sign in a user with their username and password:
 
 ```python
-signin_response = client.signin_username("username", "password")
+signin_response = client.signin_username("username", "password", "api_token")
 print(signin_response)
 ```
 
@@ -86,11 +89,11 @@ from protobase_client import ProtoBaseClient
 client = ProtoBaseClient()
 
 # Sign up using email
-response = client.signup_email("john_doe", "securepassword123", "john.doe@example.com")
+response = client.signup_email("john_doe", "securepassword123", "john.doe@example.com", "api_token")
 print(response)
 
 # Sign in using email
-signin_response = client.signin_email("john_doe", "securepassword123", "john.doe@example.com")
+signin_response = client.signin_email("john_doe", "securepassword123", "john.doe@example.com", "api_token")
 print(signin_response)
 ```
 

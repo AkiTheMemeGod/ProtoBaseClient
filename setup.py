@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="protobase-client",
-    version="1.0.0",
+    version="2.0.0",
     description="A Python client for the ProtoBase authentication API",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
